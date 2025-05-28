@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make Your Food Recipe</title>
+  <style>
+    /* Embedded Tailwind CSS (minified, subset for used classes) */
+    *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}body{margin:0;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";line-height:1.5}.max-w-5xl{max-width:80rem}.mx-auto{margin-left:auto;margin-right:auto}.min-h-screen{min-height:100vh}.p-6{padding:1.5rem}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-blue-200{--tw-gradient-from:#bfdbfe;--tw-gradient-to:rgba(191,219,254,0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-green-200{--tw-gradient-stops:var(--tw-gradient-from),#a7f3d0,var(--tw-gradient-to)}.to-yellow-200{--tw-gradient-to:#fef08a}.bg-white{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.p-8{padding:2rem}.rounded-xl{border-radius:0.75rem}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,0.25);box-shadow:var(--tw-shadow)}.text-5xl{font-size:3rem;line-height:1}.font-bold{font-weight:700}.text-center{text-align:center}.text-purple-600{--tw-text-opacity:1;color:rgba(147,51,234,var(--tw-text-opacity))}.mb-6{margin-bottom:1.5rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-gray-800{--tw-text-opacity:1;color:rgba(31,41,55,var(--tw-text-opacity))}.mb-8{margin-bottom:2rem}.grid{display:grid}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.gap-6{gap:1.5rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-blue-700{--tw-text-opacity:1;color:rgba(29,78,216,var(--tw-text-opacity))}.mb-4{margin-bottom:1rem}.bg-blue-100{--tw-bg-opacity:1;background-color:rgba(219,234,254,var(--tw-bg-opacity))}.p-6{padding:1.5rem}.rounded-lg{border-radius:0.5rem}.block{display:block}.text-lg{font-size:1.125rem;line-height:1.75rem}.font-semibold{font-weight:600}.text-blue-800{--tw-text-opacity:1;color:rgba(30,64,175,var(--tw-text-opacity))}.mb-2{margin-bottom:0.5rem}.w-full{width:100%}.p-3{padding:0.75rem}.border{border-width:1px;border-color:#d1d5db}.text-gray-600{--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.text-sm{font-size:0.875rem;line-height:1.25rem}.mt-2{margin-top:0.5rem}.bg-green-100{--tw-bg-opacity:1;background-color:rgba(209,250,229,var(--tw-bg-opacity))}.text-green-800{--tw-text-opacity:1;color:rgba(6,95,70,var(--tw-text-opacity))}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgba(254,249,195,var(--tw-bg-opacity))}.text-yellow-800{--tw-text-opacity:1;color:rgba(133,77,14,var(--tw-text-opacity))}.text-2xl{font-size:1.5rem;line-height:2rem}.text-purple-800{--tw-text-opacity:1;color:rgba(107,33,168,var(--tw-text-opacity))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgba(243,244,246,var(--tw-bg-opacity))}.list-disc{list-style-type:disc}.pl-5{padding-left:1.25rem}.text-gray-700{--tw-text-opacity:1;color:rgba(55,65,81,var(--tw-text-opacity))}.mt-8{margin-top:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.text-white{--tw-text-opacity:1;color:rgba(255,255,255,var(--tw-text-opacity))}.hover\:bg-purple-700:hover{--tw-bg-opacity:1;background-color:rgba(124,58,237,var(--tw-bg-opacity))}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.highlight{background-color:#e0f7fa;padding:2px 4px;border-radius:0.25rem}.ingredient-box{background-color:#fefcbf;padding:15px;border-radius:0.5rem}
+  </style>
+</head>
+<body class="bg-gradient-to-r from-blue-200 via-green-200 to-yellow-200 min-h-screen p-6">
+  <div class="max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-2xl">
+    <!-- Header -->
+    <h1 class="text-5xl font-bold text-center text-purple-600 mb-6">Make Your Food Recipe 🍽️</h1>
+    <p class="text-xl text-center text-gray-800 mb-8">Write about your favorite food! Easy and fun! 😊</p>
+
+    <!-- Input Form and Preview -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Left: Input Form -->
+      <div>
+        <h2 class="text-3xl font-bold text-blue-700 mb-4">Write Your Recipe</h2>
+        <div class="mb-6 bg-blue-100 p-6 rounded-lg">
+          <label class="block text-lg font-semibold text-blue-800 mb-2">1. Food Name 🍴</label>
+          <p class="text-gray-800 mb-2">Write the name of your food.</p>
+          <input id="dishName" type="text" placeholder="Example: Pizza" class="w-full p-3 border rounded-lg text-lg" oninput="updatePreview()">
+        </div>
+        <div class="mb-6 bg-blue-100 p-6 rounded-lg">
+          <label class="block text-lg font-semibold text-blue-800 mb-2">2. Country 🌍</label>
+          <p class="text-gray-800 mb-2">Where is your food from?</p>
+          <input id="origin" type="text" placeholder="Example: Italy" class="w-full p-3 border rounded-lg text-lg" oninput="updatePreview()">
+        </div>
+        <div class="mb-6 bg-green-100 p-6 rounded-lg">
+          <label class="block text-lg font-semibold text-green-800 mb-2">3. Ingredients 🥕</label>
+          <p class="text-gray-800 mb-2">List things to make your food.</p>
+          <textarea id="ingredients" placeholder="Example: Flour, Cheese, Tomato" class="w-full p-3 border rounded-lg text-lg" rows="5" oninput="updatePreview()"></textarea>
+          <p class="text-gray-600 text-sm mt-2">Write one ingredient per line.</p>
+        </div>
+        <div class="mb-6 bg-yellow-100 p-6 rounded-lg">
+          <label class="block text-lg font-semibold text-yellow-800 mb-2">4. Cooking Steps 🍳</label>
+          <p class="text-gray-800 mb-2">Tell how to cook your food.</p>
+          <textarea id="steps" placeholder="Example: 1. Mix flour. 2. Cook meat." class="w-full p-3 border rounded-lg text-lg" rows="5" oninput="updatePreview()"></textarea>
+          <p class="text-gray-600 text-sm mt-2">Write one step per line.</p>
+        </div>
+      </div>
+
+      <!-- Right: Ingredients List and Preview -->
+      <div>
+        <!-- Ingredients List -->
+        <div class="ingredient-box mb-6">
+          <h3 class="text-2xl font-semibold text-yellow-800 mb-4">Choose Ingredients 🥚</h3>
+          <p class="text-lg text-gray-800 mb-3">Pick from these or write your own!</p>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-lg font-semibold text-gray-800">Meat 🍗</p>
+              <ul class="list-disc pl-5 text-gray-700">
+                <li>Chicken 🍗</li>
+                <li>Beef 🥩</li>
+                <li>Fish 🐟</li>
+                <li>Pork 🐖</li>
+                <li>Egg 🥚</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-800">Vegetables 🥕</p>
+              <ul class="list-disc pl-5 text-gray-700">
+                <li>Tomato 🍅</li>
+                <li>Carrot 🥕</li>
+                <li>Onion 🧅</li>
+                <li>Potato 🥔</li>
+                <li>Lettuce 🥬</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-800">Dairy 🧀</p>
+              <ul class="list-disc pl-5 text-gray-700">
+                <li>Cheese 🧀</li>
+                <li>Milk 🥛</li>
+                <li>Butter 🧈</li>
+                <li>Yogurt 🥄</li>
+                <li>Cream 🥛</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-800">Carbs 🍚</p>
+              <ul class="list-disc pl-5 text-gray-700">
+                <li>Rice 🍚</li>
+                <li>Bread 🍞</li>
+                <li>Pasta 🍝</li>
+                <li>Flour 🌾</li>
+                <li>Corn 🌽</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <h3 class="text-2xl font-semibold text-purple-800 mb-4">Your Recipe Preview 📜</h3>
+          <div id="preview">
+            <h4 class="text-xl font-bold text-blue-600 mb-2">[Enter Dish Name]</h4>
+            <p class="text-lg text-gray-700 mb-4">A Traditional Dish from [Enter Country/Region]</p>
+            <div class="mb-4">
+              <h5 class="text-lg font-semibold text-gray-800">Ingredients</h5>
+              <ul id="previewIngredients" class="list-disc pl-5 text-gray-700">
+                <li>[Ingredient 1]</li>
+                <li>[Ingredient 2]</li>
+                <li>[Ingredient 3]</li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="text-lg font-semibold text-gray-800">Preparation Steps</h5>
+              <ol id="previewSteps" class="list-decimal pl-5 text-gray-700">
+                <li>[Describe first step]</li>
+                <li>[Describe second step]</li>
+                <li>[Describe final step]</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="text-center mt-8">
+      <button onclick="saveRecipe()" class="bg-purple-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-purple-700">Save Your Recipe 💾</button>
+      <p class="text-gray-600 mt-4">Click Save, then download the file. Open it in a text editor!</p>
+    </div>
+  </div>
+
+  <script>
+    function capitalizeFirstWord(str) {
+      if (!str.trim()) return str;
+      const words = str.trim().split(' ');
+      if (words.length === 0) return str;
+      words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1).toLowerCase();
+      for (let i = 1; i < words.length; i++) {
+        words[i] = words[i].toLowerCase();
+      }
+      return words.join(' ');
+    }
+
+    function updatePreview() {
+      const dishName = document.getElementById('dishName').value || '[Enter Dish Name]';
+      const origin = document.getElementById('origin').value || '[Enter Country/Region]';
+      const ingredients = document.getElementById('ingredients').value.split('\n').filter(i => i.trim());
+      const steps = document.getElementById('steps').value.split('\n').filter(s => s.trim());
+
+      document.querySelector('#preview h4').textContent = dishName;
+      document.querySelector('#preview p').textContent = `A Traditional Dish from ${origin}`;
+
+      const ingredientsList = document.getElementById('previewIngredients');
+      ingredientsList.innerHTML = ingredients.length > 0 ? ingredients.map(i => `<li>${i}</li>`).join('') : '<li>[Ingredient 1]</li><li>[Ingredient 2]</li><li>[Ingredient 3]</li>';
+
+      const stepsList = document.getElementById('previewSteps');
+      stepsList.innerHTML = steps.length > 0 ? steps.map((s, i) => `<li>${s}</li>`).join('') : '<li>[Describe first step]</li><li>[Describe second step]</li><li>[Describe final step]</li>';
+    }
+
+    function saveRecipe() {
+      try {
+        const dishName = capitalizeFirstWord(document.getElementById('dishName').value) || '[Enter Dish Name]';
+        const origin = capitalizeFirstWord(document.getElementById('origin').value) || '[Enter Country/Region]';
+        const ingredients = document.getElementById('ingredients').value.split('\n').filter(i => i.trim()).map(capitalizeFirstWord);
+        const steps = document.getElementById('steps').value.split('\n').filter(s => s.trim()).map(capitalizeFirstWord);
+
+        const textContent = `
+${dishName}
+A Traditional Dish from ${origin}
+
+Ingredients
+${ingredients.length > 0 ? ingredients.join('\n') : '[Ingredient 1]\n[Ingredient 2]\n[Ingredient 3]'}
+
+Preparation Steps
+${steps.length > 0 ? steps.join('\n') : '[Describe first step]\n[Describe second step]\n[Describe final step]'}
+        `;
+        const blob = new Blob([textContent], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'my_recipe.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error('Download failed:', error);
+        const dishName = capitalizeFirstWord(document.getElementById('dishName').value) || '[Enter Dish Name]';
+        const origin = capitalizeFirstWord(document.getElementById('origin').value) || '[Enter Country/Region]';
+        const ingredients = document.getElementById('ingredients').value.split('\n').filter(i => i.trim()).map(capitalizeFirstWord);
+        const steps = document.getElementById('steps').value.split('\n').filter(s => s.trim()).map(capitalizeFirstWord);
+
+        const textContent = `
+${dishName}
+A Traditional Dish from ${origin}
+
+Ingredients
+${ingredients.length > 0 ? ingredients.join('\n') : '[Ingredient 1]\n[Ingredient 2]\n[Ingredient 3]'}
+
+Preparation Steps
+${steps.length > 0 ? steps.join('\n') : '[Describe first step]\n[Describe second step]\n[Describe final step]'}
+        `;
+        const a = document.createElement('a');
+        a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(textContent);
+        a.download = 'my_recipe.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    }
+  </script>
+</body>
+</html>
